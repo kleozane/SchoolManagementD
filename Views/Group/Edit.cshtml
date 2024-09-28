@@ -1,0 +1,11 @@
+﻿@model SchoolManagementD.Models.GroupForModification
+@{
+    ViewData["Title"] = "Edit Group";
+}
+
+<form asp-action="Edit">
+    <label>Name: </label> <br />
+    <input asp-for="Name" type="text" /> <br />
+
+    <button>Submit</button>
+</form>

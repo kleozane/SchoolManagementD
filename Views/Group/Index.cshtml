@@ -1,0 +1,28 @@
+﻿@model List<SchoolManagementD.Data.Group> 
+@{
+    ViewData["Title"] = "Group List";
+}
+
+<table width="100%">
+    <a asp-action="Create">Create New</a>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model)
+        {
+            <tr>
+                <td>@group.Id</td>
+                <td>@group.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@group.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@group.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

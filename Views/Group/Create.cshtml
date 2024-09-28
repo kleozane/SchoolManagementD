@@ -1,0 +1,11 @@
+﻿@model SchoolManagementD.Models.GroupForCreation
+@{
+    ViewData["Title"] = "New Group";
+}
+
+<form asp-action="Create">
+    <label>Name: </label> <br />
+    <input asp-for="Name" type="text" /> <br />
+
+    <button>Submit</button>
+</form>
