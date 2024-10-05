@@ -3,8 +3,8 @@
     ViewData["Title"] = "Group List";
 }
 
-<table width="100%">
-    <a asp-action="Create">Create New</a>
+<table class="table table-hover" width="100%">
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
     <thead>
         <tr>
             <th>Id</th>
@@ -19,8 +19,8 @@
                 <td>@group.Id</td>
                 <td>@group.Name</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@group.Id">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@group.Id">Delete</a>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@group.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@group.Id">Delete</a>
                 </td>
             </tr>
         }

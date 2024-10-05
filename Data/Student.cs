@@ -8,7 +8,7 @@ namespace SchoolManagementD.Data
         public string Name { get; set; }
 
         [ForeignKey("GroupId")]
-        public int GroupId { get; set; }
+        public int? GroupId { get; set; }
         public virtual Group Group { get; set; }
     }
 }

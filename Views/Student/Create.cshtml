@@ -1,0 +1,24 @@
+﻿@model SchoolManagementD.Models.StudentForCreation
+@{
+    ViewData["Title"] = "New Student";
+}
+
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-6">
+            <label>Name: </label>
+            <input class="form-control" asp-for="Name" type="text" />
+        </div>
+        <div class="col-6">
+            <label>Group: </label>
+            <select class="form-control" asp-for="GroupId">
+                @foreach (var g in Model.Groups)
+                {
+                    <option value="@g.Id">@g.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    
+    <button class="btn btn-primary">Submit</button>
+</form>

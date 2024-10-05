@@ -3,9 +3,18 @@
     ViewData["Title"] = "New Group";
 }
 
-<form asp-action="Create">
-    <label>Name: </label> <br />
-    <input asp-for="Name" type="text" /> <br />
+<div class="row">
+    <div class="col-3">
 
-    <button>Submit</button>
-</form>
+    </div>
+    <div class="col-6">
+        <form asp-action="Create">
+            <label>Name: </label> <br />
+            <input class="form-control" asp-for="Name" type="text" /> <br />
+
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-3">
+    </div>
+</div>

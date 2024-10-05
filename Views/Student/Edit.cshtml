@@ -1,0 +1,20 @@
+﻿@model SchoolManagementD.Models.StudentForModification
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<form asp-action="Edit">
+    <label>Name: </label> <br />
+    <input asp-for="Name" type="text" /> <br />
+
+    <label>Group: </label> <br />
+    <select asp-for="GroupId">
+        @foreach (var g in Model.Groups)
+        {
+            var s = Model.SelectedGroupId == g.Id;
+            <option selected="@s" value="@g.Id">@g.Name</option>
+        }
+    </select>
+
+    <button>Submit</button>
+</form>

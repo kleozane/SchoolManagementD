@@ -2,10 +2,17 @@
 @{
     ViewData["Title"] = "Edit Group";
 }
+<div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col-6">
+        <form asp-action="Create">
+            <label>Name: </label> <br />
+            <input class="form-control" asp-for="Name" type="text" /> <br />
 
-<form asp-action="Edit">
-    <label>Name: </label> <br />
-    <input asp-for="Name" type="text" /> <br />
-
-    <button>Submit</button>
-</form>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-3">
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model List<SchoolManagementD.Data.Student>
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<table class="table table-hover" width="100%">
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Group?.Name</td>
+                <td>
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
