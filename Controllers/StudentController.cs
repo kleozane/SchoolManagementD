@@ -14,9 +14,10 @@ namespace SchoolManagementD.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            var students = _context.Students.Include(s => s.Group).ToList();
+            var students = await _context.Students.Include(s => s.Group).ToListAsync();
             return View(students);
         }
 

@@ -4,17 +4,22 @@
 }
 
 <form asp-action="Edit">
-    <label>Name: </label> <br />
-    <input asp-for="Name" type="text" /> <br />
+    <div class="row">
+        <div class="col-6">
+            <label>Name: </label>
+            <input class="form-control" asp-for="Name" type="text" />
+        </div>
+        <div class="col-6">
+            <label>Group: </label>
+            <select class="form-control" asp-for="GroupId">
+                @foreach (var g in Model.Groups)
+                {
+                    var s = Model.SelectedGroupId == g.Id;
+                    <option selected="@s" value="@g.Id">@g.Name</option>
+                }
+            </select>
+        </div>
+    </div>
 
-    <label>Group: </label> <br />
-    <select asp-for="GroupId">
-        @foreach (var g in Model.Groups)
-        {
-            var s = Model.SelectedGroupId == g.Id;
-            <option selected="@s" value="@g.Id">@g.Name</option>
-        }
-    </select>
-
-    <button>Submit</button>
+    <button class="btn btn-primary">Submit</button>
 </form>
